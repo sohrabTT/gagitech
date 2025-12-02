@@ -76,8 +76,8 @@ export default function AccountPage() {
         <div className="container mx-auto px-4">
           {/* Page header */}
           <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-2">حساب کاربری</h1>
-            <p className="text-muted-foreground">مدیریت پروفایل، سفارشات و تنظیمات</p>
+            <h1 className="text-4xl font-bold mb-2 text-white">حساب کاربری</h1>
+            <p className="text-white/70">مدیریت پروفایل، سفارشات و تنظیمات</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -89,8 +89,8 @@ export default function AccountPage() {
                     <User className="h-8 w-8 text-primary" />
                   </div>
                   <div className="min-w-0">
-                    <h2 className="font-bold truncate">{user.name}</h2>
-                    <p className="text-sm text-muted-foreground truncate">{user.email}</p>
+                    <h2 className="font-bold truncate text-white">{user.name}</h2>
+                    <p className="text-sm text-white/70 truncate">{user.email}</p>
                   </div>
                 </div>
 
@@ -100,7 +100,7 @@ export default function AccountPage() {
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-right ${
                       activeTab === 'orders'
                         ? 'bg-primary/10 text-primary font-medium'
-                        : 'text-foreground hover:bg-secondary'
+                        : 'text-white hover:bg-secondary'
                     }`}
                   >
                     <Package className="h-5 w-5 flex-shrink-0" />
@@ -112,7 +112,7 @@ export default function AccountPage() {
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-right ${
                       activeTab === 'addresses'
                         ? 'bg-primary/10 text-primary font-medium'
-                        : 'text-foreground hover:bg-secondary'
+                        : 'text-white hover:bg-secondary'
                     }`}
                   >
                     <MapPin className="h-5 w-5 flex-shrink-0" />
@@ -124,7 +124,7 @@ export default function AccountPage() {
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-right ${
                       activeTab === 'saved'
                         ? 'bg-primary/10 text-primary font-medium'
-                        : 'text-foreground hover:bg-secondary'
+                        : 'text-white hover:bg-secondary'
                     }`}
                   >
                     <User className="h-5 w-5 flex-shrink-0" />
@@ -136,7 +136,7 @@ export default function AccountPage() {
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-right ${
                       activeTab === 'profile'
                         ? 'bg-primary/10 text-primary font-medium'
-                        : 'text-foreground hover:bg-secondary'
+                        : 'text-white hover:bg-secondary'
                     }`}
                   >
                     <Settings className="h-5 w-5 flex-shrink-0" />
@@ -159,7 +159,7 @@ export default function AccountPage() {
               {activeTab === 'orders' && (
                 <div className="space-y-4">
                   <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-bold">سفارشات من</h2>
+                    <h2 className="text-2xl font-bold text-white">سفارشات من</h2>
                     <Button variant="outline">
                       مشاهده همه
                       <ChevronLeft className="h-4 w-4 mr-2" />
@@ -171,13 +171,13 @@ export default function AccountPage() {
                       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div className="flex-1">
                           <div className="flex items-center gap-4 mb-2">
-                            <h3 className="font-bold text-lg">{order.id}</h3>
+                            <h3 className="font-bold text-lg text-white">{order.id}</h3>
                             <span className={`px-3 py-1 rounded-full text-sm font-medium ${order.statusColor}`}>
                               {order.status}
                             </span>
                           </div>
-                          <p className="text-sm text-muted-foreground mb-2">{order.items}</p>
-                          <div className="flex flex-wrap gap-4 text-sm">
+                          <p className="text-sm text-white/70 mb-2">{order.items}</p>
+                          <div className="flex flex-wrap gap-4 text-sm text-white">
                             <span>تاریخ: {order.date}</span>
                             <span>مجموع: {order.total}</span>
                           </div>
@@ -196,7 +196,7 @@ export default function AccountPage() {
               {activeTab === 'addresses' && (
                 <div className="space-y-4">
                   <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-bold">آدرس‌های من</h2>
+                    <h2 className="text-2xl font-bold text-white">آدرس‌های من</h2>
                     <Button>
                       افزودن آدرس جدید
                       <ChevronLeft className="h-4 w-4 mr-2" />
@@ -208,14 +208,14 @@ export default function AccountPage() {
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <h3 className="font-bold text-lg">{address.name}</h3>
+                            <h3 className="font-bold text-lg text-white">{address.name}</h3>
                             {address.isDefault && (
                               <span className="px-2 py-1 text-xs font-medium bg-accent/10 text-accent rounded">پیش‌فرض</span>
                             )}
                           </div>
-                          <p className="text-muted-foreground mb-2">{address.type}</p>
-                          <p className="text-sm mb-2">{address.address}</p>
-                          <p className="text-sm text-muted-foreground">{address.phone}</p>
+                          <p className="text-white/70 mb-2">{address.type}</p>
+                          <p className="text-sm mb-2 text-white">{address.address}</p>
+                          <p className="text-sm text-white/70">{address.phone}</p>
                         </div>
                         <div className="flex gap-2 flex-shrink-0">
                           <Button variant="outline" size="sm">ویرایش</Button>
@@ -232,7 +232,7 @@ export default function AccountPage() {
               {/* Saved Items Tab */}
               {activeTab === 'saved' && (
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold mb-6">آیتم‌های ذخیره‌شده</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-white">آیتم‌های ذخیره‌شده</h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {savedItems.map((item) => (
@@ -245,7 +245,7 @@ export default function AccountPage() {
                           />
                         </div>
                         <div className="p-4">
-                          <h3 className="font-bold mb-2 line-clamp-2">{item.title}</h3>
+                          <h3 className="font-bold mb-2 line-clamp-2 text-white">{item.title}</h3>
                           <p className="text-lg font-bold text-primary mb-4">{item.price}</p>
                           <Button className="w-full">
                             افزودن به سبد
@@ -261,37 +261,37 @@ export default function AccountPage() {
               {/* Profile Settings Tab */}
               {activeTab === 'profile' && (
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-bold mb-6">تنظیمات حساب</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-white">تنظیمات حساب</h2>
 
                   {/* Personal Info */}
                   <div className="bg-card rounded-xl border p-6">
-                    <h3 className="text-xl font-bold mb-4">اطلاعات شخصی</h3>
+                    <h3 className="text-xl font-bold mb-4 text-white">اطلاعات شخصی</h3>
                     <div className="space-y-4">
                       <div>
-                        <label htmlFor="fullName" className="block text-sm font-medium mb-2">نام کامل</label>
+                        <label htmlFor="fullName" className="block text-sm font-medium mb-2 text-white">نام کامل</label>
                         <input
                           id="fullName"
                           type="text"
                           defaultValue={user.name}
-                          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring bg-secondary text-white"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">ایمیل</label>
+                        <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">ایمیل</label>
                         <input
                           id="email"
                           type="email"
                           defaultValue={user.email}
-                          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring bg-secondary text-white"
                         />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium mb-2">شماره تماس</label>
+                        <label htmlFor="phone" className="block text-sm font-medium mb-2 text-white">شماره تماس</label>
                         <input
                           id="phone"
                           type="tel"
                           defaultValue={user.phone}
-                          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring bg-secondary text-white"
                         />
                       </div>
                       <Button className="w-full">ذخیره تغییرات</Button>
@@ -300,7 +300,7 @@ export default function AccountPage() {
 
                   {/* Security */}
                   <div className="bg-card rounded-xl border p-6">
-                    <h3 className="text-xl font-bold mb-4">امنیت</h3>
+                    <h3 className="text-xl font-bold mb-4 text-white">امنیت</h3>
                     <div className="space-y-4">
                       <Button variant="outline" className="w-full">
                         تغییر رمز عبور
@@ -315,17 +315,17 @@ export default function AccountPage() {
 
                   {/* Notifications */}
                   <div className="bg-card rounded-xl border p-6">
-                    <h3 className="text-xl font-bold mb-4">اطلاع‌رسانی‌ها</h3>
+                    <h3 className="text-xl font-bold mb-4 text-white">اطلاع‌رسانی‌ها</h3>
                     <div className="space-y-3">
-                      <label className="flex items-center gap-3">
+                      <label className="flex items-center gap-3 text-white">
                         <input type="checkbox" defaultChecked className="w-4 h-4 rounded" />
                         <span>ایمیل برای سفارشات جدید</span>
                       </label>
-                      <label className="flex items-center gap-3">
+                      <label className="flex items-center gap-3 text-white">
                         <input type="checkbox" defaultChecked className="w-4 h-4 rounded" />
                         <span>ایمیل برای تخفیف‌های ویژه</span>
                       </label>
-                      <label className="flex items-center gap-3">
+                      <label className="flex items-center gap-3 text-white">
                         <input type="checkbox" defaultChecked className="w-4 h-4 rounded" />
                         <span>اخطار برای بازگشت محصولات</span>
                       </label>
